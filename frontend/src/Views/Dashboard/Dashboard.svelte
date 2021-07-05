@@ -3,7 +3,7 @@
 
     import Sidebar from "./Sidebar.svelte";
 
-    import DebugButtons from "./DebugButtons.svelte";
+    import DebugOverlay from "./DebugOverlay/DebugOverlay.svelte";
 </script>
 
 <div class="h-screen flex overflow-hidden bg-gray-900">
@@ -29,12 +29,12 @@
                         </div>
                         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
                             <div class="py-4">
-                                <Link to="/Dashboard/Alerts"><button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Alerts</button></Link>
+                                <Link to="/Dashboard/DebugOverlay"><button class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Debug Overlay</button></Link>
                             </div>
                         </div>
 
                     </Route>
-                    <Route path="Alerts" component={DebugButtons}/>
+                    <Route path="DebugOverlay" component={DebugOverlay}/>
                 </Router>
             </div>
         </main>
