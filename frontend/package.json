@@ -29,9 +29,7 @@
     "svelte-routing": "^1.6.0",
     "tailwindcss": "^2.2.4",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.3"
-  },
-  "dependencies": {
+    "typescript": "^3.9.3",
     "rollup-plugin-postcss": "^4.0.0"
   }
 }
