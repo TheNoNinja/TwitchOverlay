@@ -1,0 +1,10 @@
+*/bin
+*/lib
+*/dist
+*/node_modules
+*/.env
+
+*/node_modules/
+*/public/build/
+
+*/.DS_Store
