@@ -27,7 +27,7 @@ To build and run the backend run the following commands:
 cd backend
 npm install
 npm run build:js
-node ./bin/index.js
+node ./lib/index.js
 ```
 ### Frontend
 To build and run the frontend run the following commands:
