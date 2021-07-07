@@ -21,7 +21,6 @@
         </div>
         <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none">
             <div class="py-6">
-                <Link> </Link>
                 <Router>
                     <Route path="/">
                         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,10 +28,9 @@
                         </div>
                         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
                             <div class="py-4">
-                                <Link to="/Dashboard/DebugOverlay"><button class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Debug Overlay</button></Link>
+                                <Link to="/Dashboard/DebugOverlay"><button class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Debug Overlay</button></Link>
                             </div>
                         </div>
-
                     </Route>
                     <Route path="DebugOverlay" component={DebugOverlay}/>
                 </Router>

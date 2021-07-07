@@ -1,33 +1,34 @@
 import type {ChatEvent} from "./Types/Chat/ChatEvent";
 import {derived, Readable, writable} from "svelte/store";
 
-type ChatQueue = ChatEvent[];
-const {update, subscribe} = writable<ChatQueue>([]);
+const {update, subscribe} = writable<ChatEvent[]>([]);
 
-export const chatQueue: Readable<ChatQueue> & {
+export const chatQueue: Readable<ChatEvent[]> & {
     addMessage: (chatEvent: ChatEvent) => void,
-    clearMessage: (id: ChatEvent["id"]) => void,
+    clearMessage: (id: ChatEvent["id"]) => void
 } = {
     subscribe,
     addMessage: (chatEvent: ChatEvent) => {
         onNewMessage(chatEvent);
-        update(oldState => [...oldState, chatEvent]);
+        update(oldState => [...oldState, chatEvent])
     },
     clearMessage: (id: ChatEvent["id"]) => {
-        update(oldState => oldState.filter(message => message.id !== id));
-    },
+        update(oldState => oldState.filter(message => message.id !== id))
+    }
 }
 
-const messageDuration = 10 * 1000;
+const messageDurationSec = 30;
 function onNewMessage(chatEvent: ChatEvent) {
     setTimeout(() => {
         chatQueue.clearMessage(chatEvent.id);
-    }, messageDuration);
+    }, messageDurationSec * 1000)
 }
 
-export const chatDisplayQueue: Readable<ChatQueue> = derived(chatQueue, queue => queue.filter(({payload}) => {
+export const chatDisplayQueue: Readable<ChatEvent[]> = derived(chatQueue, queue => queue.filter(({payload}) => {
     if (payload.messageText.startsWith("!")) return false;
     if (payload.displayName.toLowerCase() === "nightbot") return false;
-    if (payload.messageText.split(" ").length === 1 && (payload.messageText.startsWith("www.") || payload.messageText.startsWith("http"))) return false;
+    if (payload.messageText.split(" ").length === 1 && (
+        payload.messageText.startsWith("www.") || payload.messageText.startsWith("http")
+    )) return false;
     return true;
-}));
+}))

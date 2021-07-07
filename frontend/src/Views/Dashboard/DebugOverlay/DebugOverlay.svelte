@@ -43,7 +43,7 @@
                             <dt class="text-sm font-medium text-gray-300">
                                 Alert URL
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-500 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm text-gray-400 sm:mt-0 sm:col-span-2">
                                 http://localhost:5000/alerts{#if alertModifiers.position !== null}?position={alertModifiers.position}{/if}
                             </dd>
                         </div>
@@ -51,7 +51,7 @@
                             <dt class="text-sm font-medium text-gray-300">
                                 Width
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-500 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm text-gray-400 sm:mt-0 sm:col-span-2">
                                 {#if alertModifiers.position !== null}Its recommended that you put the width a the full width of your stream.{:else}Its recommended that the minimum width is 350px. (You may even want to make it larger to make it fit large names.){/if}
                             </dd>
                         </div>
@@ -59,7 +59,7 @@
                             <dt class="text-sm font-medium text-gray-300">
                                 Height
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-500 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm text-gray-400 sm:mt-0 sm:col-span-2">
                                 150px is the minimal recommended height.
                             </dd>
                         </div>
@@ -67,9 +67,59 @@
                 </div>
                 <div>
                     <h3 class="text-lg leading-6 font-medium text-gray-300">
-                        Debug buttons
+                        Debug alerts
                     </h3>
                     <DebugButtons/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-4">
+        <div class="bg-gray-800 shadow overflow-hidden sm:rounded-md">
+            <div class="px-4 py-4 sm:px-6">
+                <div>
+                    <h3 class="text-lg leading-6 font-medium text-gray-300">
+                        Chat overlay
+                    </h3>
+                    <p class="mt-1 max-w-2xl text-sm text-gray-400">
+                        All information about the chat overlay.
+                    </p>
+                </div>
+                <div>
+                    <dl>
+                        <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                            <dt class="text-sm font-medium text-gray-300">
+                                Chat URL
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-400 sm:mt-0 sm:col-span-2">
+                                http://localhost:5000/chat
+                            </dd>
+                        </div>
+                        <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                            <dt class="text-sm font-medium text-gray-300">
+                                Width
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-400 sm:mt-0 sm:col-span-2">
+                                Its recommended that the minimum width is 350px. (You may even want to make it larger to make it fit large names and messages.)
+                            </dd>
+                        </div>
+                        <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                            <dt class="text-sm font-medium text-gray-300">
+                                Height
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-400 sm:mt-0 sm:col-span-2">
+                                775px is the minimal recommended height as it would fit around 5 chat messages.
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+                <div>
+                    <h3 class="text-lg leading-6 font-medium text-gray-300">
+                        Debug chat
+                    </h3>
+                    <p class="mt-1 max-w-2xl text-sm text-gray-400">
+                        To debug the chat feature simply chat in your channels chat.
+                    </p>
                 </div>
             </div>
         </div>
