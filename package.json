@@ -1,0 +1,59 @@
+{
+	"name": "sveltekit-electron",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Minimal Sveltekit + Electron starter template.",
+	"main": "src/electron.cjs",
+	"type": "module",
+	"scripts": {
+		"dev": "NODE_ENV=dev PORT=8080 npm run dev:all",
+		"dev:all": "concurrently -n=svelte,electron,tailwind -c=red,blue,cyan \"npm run dev:svelte\" \"npm run dev:electron\" \"npm run dev:tailwind\"",
+		"dev:svelte": "svelte-kit dev --port 8080",
+		"dev:electron": "electron src/electron.cjs",
+		"dev:tailwind": "postcss src/tailwind.css -o src/bundle.css -w",
+		"build": "cross-env NODE_ENV=production npm run build:tailwind && npm run build:svelte && npm run build:electron",
+		"build:svelte": "svelte-kit build",
+		"build:electron": "electron-builder --config build.config.json",
+		"build:tailwind": "postcss src/tailwind.css -o src/bundle.css",
+		"start": "svelte-kit start"
+	},
+	"browserslist": [
+		"Chrome 89"
+	],
+	"dependencies": {
+		"electron-context-menu": "^2.5.0",
+		"electron-serve": "^1.1.0",
+		"electron-window-state": "^5.0.3",
+		"express": "^4.17.1"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-static": "^1.0.0-next.11",
+		"@sveltejs/kit": "next",
+		"@types/electron-window-state": "^2.0.34",
+		"@typescript-eslint/eslint-plugin": "^4.24.0",
+		"@typescript-eslint/parser": "^4.24.0",
+		"autoprefixer": "^10.3.6",
+		"concurrently": "^6.2.2",
+		"cross-env": "^7.0.3",
+		"dotenv": "^8.6.0",
+		"electron": "^12.0.9",
+		"electron-builder": "^22.10.5",
+		"electron-connect": "^0.6.3",
+		"electron-packager": "^15.2.0",
+		"electron-reloader": "^1.2.1",
+		"electron-updater": "^4.3.9",
+		"eslint": "^7.26.0",
+		"eslint-plugin-svelte": "^1.1.2",
+		"npm-run-all": "^4.1.5",
+		"postcss-cli": "^9.0.1",
+		"prettier": "^2.3.0",
+		"prettier-plugin-svelte": "^2.3.0",
+		"sass": "^1.33.0",
+		"svelte": "^3.38.2",
+		"svelte-check": "^1.5.4",
+		"svelte-preprocess": "^4.7.3",
+		"tailwindcss": "^2.2.16",
+		"typescript": "^4.2.4",
+		"vite": "^2.3.3"
+	}
+}
